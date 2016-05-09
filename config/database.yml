@@ -1,0 +1,22 @@
+default: &default
+  username: root
+  password:
+  database: fooda_api
+  adapter: mysql2
+  encoding: utf8
+  pool: 15
+  host: localhost
+  port: 3306
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  database: fooda_api_test
+
+qa:
+   <<: *default
+
+production:
+  <<: *default
