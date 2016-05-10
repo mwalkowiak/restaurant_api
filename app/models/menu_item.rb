@@ -5,8 +5,7 @@ class MenuItem < ActiveRecord::Base
   has_many :tags, through: :menu_item_tags
 
   belongs_to :category
-
-  self.per_page = 2
+  belongs_to :restaurant
 
   def category_name
     @category_name ||= category.name if category
