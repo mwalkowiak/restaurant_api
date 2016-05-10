@@ -29,7 +29,7 @@ In order to run the project:
 ## API requests
 
 Please use ``VzHxH9SBiF157U_zvoED7FH3_XeGG1C5`` as API key
-This is the only fixed api key, the rest of those keys is being generated automatically during data migration and any other creation of the new user (plese see after_create callback in user model)
+This is the only fixed api key, the rest of those keys is being generated dynamically during data migration as well as any other creation of the new user (please see after_create callback in user model)
 
 ### Get restaurants list:
 ```
