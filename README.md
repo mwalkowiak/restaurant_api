@@ -15,7 +15,7 @@ In order to run the project:
   ```
   Run database schema and data migrations to populate the data
   ```
-  rake db:migrate data:migrate
+  rake db:create db:migrate data:migrate
   ```
   run server:
   ```
