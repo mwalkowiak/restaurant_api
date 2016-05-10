@@ -7,7 +7,7 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 # Pagination config
-WillPaginate.per_page = 3
+WillPaginate.per_page = 2
 
 module FoodaApi
   class Application < Rails::Application

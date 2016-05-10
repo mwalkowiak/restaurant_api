@@ -5,13 +5,11 @@ module API
       version 'v1'
       format :json
 
-      # Include pagination module
-      include Grape::Kaminari
-
       resource :restaurants do
         desc 'Return list of restaurants'
 
         get do
+          status 200
           Restaurant.all.page(params[:page])
         end
       end

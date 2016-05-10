@@ -32,9 +32,12 @@ gem 'data_migrate'
 # Pagination for Grape
 gem 'will_paginate', '~> 3.1.0'
 
+# testing
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'rspec-rails' #includes RSpec itself in a wrapper to make it play nicely with Rails 3.
+  gem 'factory_girl_rails' #replaces Rails' default fixtures for feeding test data to the test suite with much more preferable factories.
+  gem 'faker' #generates names, email addresses, and other placeholders for factories.
+  gem 'pry'
 end
 
 group :development do
@@ -43,5 +46,9 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :test do
+  gem 'database_cleaner'
 end
 
