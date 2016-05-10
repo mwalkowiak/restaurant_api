@@ -5,10 +5,6 @@ module API
       version 'v1'
       format :json
 
-      rescue_from ::ActiveRecord::RecordNotFound do |_e|
-        error!('record not found', 404)
-      end
-
       resource :menu_items do
         desc 'Retrieve restaurants menu items'
 
@@ -21,6 +17,11 @@ module API
 
             # Avoid N+1 query problem using includes
             menu_items = MenuItem.with_restaurant_id(params[:restaurant_id]).includes(:tags, :category).page(params[:page])
+
+            # We search against Restaurant table, because we want differentiate non existing restaurant
+            # and menu items for given restaurant which might be not created yet then we will just return empty array
+            error!('record not found', 404) unless Restaurant.find_by(id: params[:restaurant_id])
+
             menu_items.each do |menu_item|
               data_records = [
                   menu_item.as_json,
@@ -32,6 +33,7 @@ module API
               results << data_records.inject(&:merge)
             end
 
+            status 200
             results
           end
         end

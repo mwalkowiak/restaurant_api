@@ -14,7 +14,6 @@ describe 'API::V1::Restaurants', type: :request do
     end
   end
 
-
   context 'Returned results testing' do
     before do
       @restaurant1 = FactoryGirl.create(:restaurant, name: 'Restaurant 1')
