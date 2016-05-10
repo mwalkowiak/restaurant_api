@@ -30,7 +30,6 @@ gem 'grape'
 gem 'data_migrate'
 
 # Pagination for Grape
-gem 'grape-kaminari'
 gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
