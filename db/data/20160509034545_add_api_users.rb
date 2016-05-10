@@ -3,7 +3,8 @@ class AddApiUsers < ActiveRecord::Migration
       {
           :first_name => 'Mike',
           :last_name => 'Walkowiak',
-          :email => 'mw@mwalkowiak.com'
+          :email => 'mw@mwalkowiak.com',
+          :api_key => 'VzHxH9SBiF157U_zvoED7FH3_XeGG1C5'
       },
       {
           :first_name => 'John',
